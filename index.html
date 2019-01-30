@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aleo" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/css/master.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="header-app">
+      <h2>Grocery List App</h2>
+    </div>
+    <div class="application" ng-app="GroceryList" ng-controller="myCtrl">
+      <div class="grocery-list">
+        <ul>
+          <li ng-repeat="x in productlist">
+            {{x}} <span class="left" ng-click="removeItem($index)"><img src="img/rubbish-bin-delete-button.png" alt="Remove Icon" width="20"></span>
+          </li>
+        </ul>
+      </div>
+      <div class="control-list">
+        <div class="list-control-col">
+          <input ng-model="addMe">
+          <div id="grocery-add" ng-click="addItem()"><img src="img/add.svg" alt="Add Icon" width="32"></div>
+        </div>
+        <div class="error">
+            {{error}}
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/controller.js" charset="utf-8"></script>
+</html>
